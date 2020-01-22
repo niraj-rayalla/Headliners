@@ -40,10 +40,10 @@ object HeadlinersApi {
     //region Public Methods
 
     /**
-     * Returns the top headlines from the news api.
+     * Returns the top headlines from the news api.ss
      */
     fun getTopHeadlines(): Single<TopHeadlines> {
-        return this.newsHttpApi.getVehicleData()
+        return this.newsHttpApi.getTopHeadlines()
     }
 
     //endregion

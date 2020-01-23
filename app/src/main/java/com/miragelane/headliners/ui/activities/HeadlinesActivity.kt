@@ -38,11 +38,6 @@ class HeadlinesActivity : HeadlinersActivity() {
     }
 
     private fun bindToViewModel() {
-        HeadlinersApi.getTopHeadlines().subscribe({
-            Log.d("", "")
-        }, {
-            Log.d("", "")
-        }).disposedBy(this.lifecycleDisposable)
     }
 
     //endregion

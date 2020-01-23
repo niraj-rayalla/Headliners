@@ -13,7 +13,7 @@ interface NewsRetrofit {
     /**
      * Gets the top headline articles.
      */
-    @GET("/top-headlines?country=us&apiKey=${Constants.HEADLNES_API_KEY}")
+    @GET("/v2/top-headlines?country=us&apiKey=${Constants.HEADLNES_API_KEY}")
     fun getTopHeadlines(): Single<TopHeadlines>
 
 }

@@ -3,7 +3,8 @@ package com.miragelane.headliners.api.adapters
 import com.google.gson.TypeAdapter
 import com.google.gson.stream.JsonReader
 import com.google.gson.stream.JsonWriter
-import java.time.Instant
+import org.threeten.bp.Instant
+import org.threeten.bp.format.DateTimeFormatter
 
 /**
  * Converts between org.threeten.bp.Instant and json objects.
@@ -19,13 +20,13 @@ class InstantAdapter: TypeAdapter<Instant>() {
     }
 
     override fun read(jsonReader: JsonReader?): Instant? {
-        return try {
-            val long = jsonReader?.nextLong() ?: 0L
-            Instant.ofEpochMilli(long)
-        }
-        catch (e: IllegalStateException) {
-            jsonReader?.nextNull()
-            null
+        return jsonReader?.nextString()?.let {
+            try {
+                Instant.from(DateTimeFormatter.ISO_DATE_TIME.parse(it))
+            }
+            catch (e: IllegalStateException) {
+                null
+            }
         }
     }
 }

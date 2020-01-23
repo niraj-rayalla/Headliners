@@ -62,4 +62,7 @@ dependencies {
     kapt "androidx.room:room-compiler:2.2.3"
     annotationProcessor "androidx.room:room-compiler:2.2.3"
     api "androidx.room:room-rxjava2:2.2.3"
+
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.5.2'
 }

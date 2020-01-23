@@ -1,7 +1,12 @@
 package com.miragelane.headliners.ui.adapters
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.RippleDrawable
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.miragelane.headliners.R
 import com.miragelane.headliners.api.models.NewsArticle
 import com.miragelane.headliners.ui.views.NewsArticleView
 import io.reactivex.Observable
@@ -68,5 +73,10 @@ class NewsArticleViewHolder(val articleView: NewsArticleView, private val itemCl
 
         // Make sure the width is match parent
         this.articleView.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+
+        // Add a ripple drawable
+        ResourcesCompat.getColorStateList(articleView.resources, R.color.list_item_touch, null)?.also { rippleColorStateList ->
+            this.articleView.background = RippleDrawable(rippleColorStateList, ColorDrawable(Color.WHITE), null)
+        }
     }
 }

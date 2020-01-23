@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/screen_background_dark_transparent" />
+        app:srcCompat="@android:drawable/screen_background_dark_transparent"/>
 
     <TextView
         android:id="@+id/titleTextView"
@@ -29,14 +29,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageView"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Title" />
+        tools:text="Title"
+        android:ellipsize="end"  />
 
     <TextView
         android:id="@+id/descriptionTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:maxLines="3"
@@ -44,6 +45,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageView"
         app:layout_constraintTop_toBottomOf="@id/titleTextView"
-        tools:text="Description" />
+        tools:text="Description"
+        android:textColor="@android:color/darker_gray"
+        android:ellipsize="end" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

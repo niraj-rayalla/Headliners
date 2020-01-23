@@ -3,7 +3,7 @@ package com.miragelane.headliners.api.adapters
 import com.google.gson.TypeAdapter
 import com.google.gson.stream.JsonReader
 import com.google.gson.stream.JsonWriter
-import org.threeten.bp.Instant
+import java.time.Instant
 
 /**
  * Converts between org.threeten.bp.Instant and json objects.

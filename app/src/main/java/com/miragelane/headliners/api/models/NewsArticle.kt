@@ -1,6 +1,6 @@
 package com.miragelane.headliners.api.models
 
-import org.threeten.bp.Instant
+import java.time.Instant
 
 /**
  * The model for a single news article.

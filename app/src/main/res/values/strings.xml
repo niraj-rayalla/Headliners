@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Headliners</string>
     <string name="title_headlines">Headlines</string>
+    <string name="fail_open_article_in_browser">Failed open the article</string>
 </resources>

@@ -11,11 +11,17 @@ import io.reactivex.subjects.PublishSubject
 /**
  * Keeps track of the data to show in a headlines list.
  */
-class NewsArticlesRecyclerViewAdapter(val articles: List<NewsArticle>): RecyclerView.Adapter<NewsArticleViewHolder>() {
+class NewsArticlesRecyclerViewAdapter(articles: List<NewsArticle>): RecyclerView.Adapter<NewsArticleViewHolder>() {
 
     //region State
 
     private val itemClickedSubject: PublishSubject<Int> = PublishSubject.create()
+
+    var articles: List<NewsArticle> = articles
+        set(value) {
+            field = value
+            this.notifyDataSetChanged()
+        }
 
     //endregion
 
@@ -59,5 +65,8 @@ class NewsArticleViewHolder(val articleView: NewsArticleView, private val itemCl
         this.articleView.setOnClickListener {
             this.itemClickedSubject.onNext(this.adapterPosition)
         }
+
+        // Make sure the width is match parent
+        this.articleView.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
     }
 }
